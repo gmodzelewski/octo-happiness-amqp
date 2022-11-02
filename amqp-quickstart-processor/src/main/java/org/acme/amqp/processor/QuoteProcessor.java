@@ -26,12 +26,12 @@ public class QuoteProcessor {
     @Outgoing("quotes")         // <2>
     @Blocking                   // <3>
     public Quote process(JsonObject jsonObject) {
-        final String id = jsonObject.getString("id", "dinge");
+        final String id = jsonObject.getString("id", "-");
         final long startTime = jsonObject.getLong("start_time", 1L);
-        final QuoteRequest quoteRequest = new QuoteRequest(id, startTime);
         final long now = System.currentTimeMillis();
         final long quoteRequestTimeInMs = now - startTime;
+        final QuoteRequest quoteRequest = new QuoteRequest(id, startTime);
         logger.log(Level.INFO, "QuoteRequest ran " + quoteRequestTimeInMs + "ms");
-        return new Quote(quoteRequest.id, random.nextInt(100), quoteRequest.startTime, quoteRequestTimeInMs, System.currentTimeMillis());
+        return new Quote(quoteRequest.id, random.nextInt(100), quoteRequest.startTime, quoteRequestTimeInMs, now);
     }
 }
