@@ -35,7 +35,7 @@
     var source = new EventSource("/quotes");
     source.onmessage = (event) => {
         var json = JSON.parse(event.data);
-        var estimated = Date.now() - json.requestStartTime;
+        var estimated = Math.abs(Date.now() - json.requestStartTime);
         $(`#${json.id}`).html(function(index, html) {
             return html.replace("Pending", `\$\xA0${json.price} - \t Request took ${json.requestTimeInMs}ms - Overall took ${estimated}ms`);
         });

@@ -1,4 +1,20 @@
-Quarkus AMQP 1.0 Quickstart
+# Quarkus Smallrye Messaging example
+
+1. Clone repository
+2. Change `mp.messaging.connector.smallrye-amqp.host` and `port` according to your AMQ Broker service name in the files
+   - `amqp-quickstart-processor/src/main/resources/application.properties`
+   - `amqp-quickstart-producer/src/main/resources/application.properties` 
+1. Deploy producer in oc's current context via
+   - `cd ampq-quickstart-producer`
+   - `./mvnw clean package -Dquarkus.kubernetes.deploy=true`
+1. Deploy processor in oc's current context via
+   - `cd ../ampq-quickstart-processor`
+   - `./mvnw clean package -Dquarkus.kubernetes.deploy=true`
+
+
+
+
+<!-- Quarkus AMQP 1.0 Quickstart
 ============================
 
 This project illustrates how you can interact with AMQP 1.0 (Apache Artemis in this quickstart) using MicroProfile Reactive Messaging.
@@ -58,4 +74,4 @@ Then, start the system using:
 > export QUARKUS_MODE=native
 > docker compose up
 ```
-Then, open your browser to `http://localhost:8080/quotes.html`, and click on the "Request Quote" button.
+Then, open your browser to `http://localhost:8080/quotes.html`, and click on the "Request Quote" button. -->

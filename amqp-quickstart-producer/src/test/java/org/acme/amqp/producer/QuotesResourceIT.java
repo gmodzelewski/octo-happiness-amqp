@@ -1,8 +1,8 @@
-package org.acme.amqp.producer;
+// package org.acme.amqp.producer;
 
-import io.quarkus.test.junit.QuarkusIntegrationTest;
+// import io.quarkus.test.junit.QuarkusIntegrationTest;
 
-@QuarkusIntegrationTest
-public class QuotesResourceIT extends QuotesResourceTest {
+// @QuarkusIntegrationTest
+// public class QuotesResourceIT extends QuotesResourceTest {
 
-}
+// }
